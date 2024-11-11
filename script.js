@@ -95,30 +95,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ]
     };
-
+    // get elements for placing Cards And getID of Theme Button
     const articlesContainer = document.getElementById("first-row");
-    const popularArticleContainer = document.getElementById("sidebar-row");
+    const popularArticleContainer = document.getElementById("sidebar-row"); 
     const themeToggleBtn = document.querySelector(".button-theme");
 
     // init theme
-    const currentTheme = localStorage.getItem("theme") || "light";
-    document.body.classList.toggle("dark-theme", currentTheme === "dark");
-    themeToggleBtn.textContent = currentTheme === "dark" ? "Light Mode" : "Dark Mode";
+    const currentTheme = localStorage.getItem("theme") || "light"; //if there is no theme then light is default
+    document.body.classList.toggle("dark-theme", currentTheme === "dark"); // if current theme is dark body gets class dark-theme
+    themeToggleBtn.textContent = currentTheme === "dark" ? "Light Mode" : "Dark Mode"; //changes button text depending on theme
 
 	// Theme toggle functionality
     themeToggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark-theme");
-        const newTheme = document.body.classList.contains("dark-theme") ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        themeToggleBtn.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+        document.body.classList.toggle("dark-theme"); //if body has theme it deletes
+        const newTheme = document.body.classList.contains("dark-theme") ? "dark" : "light"; // variable gets values dark or light depending on body class
+        localStorage.setItem("theme", newTheme); //saves new theme in local storage to keep theme while refreshing
+        themeToggleBtn.textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode"; // updates button text according to new theme
     });
 
    // read time calculation
     const calculateReadingTime = (wordCount) => Math.ceil(wordCount / 200);
 
     // Modal initialization
-    const myModalElement = document.getElementById('articleModal');
-    const myModal = new bootstrap.Modal(myModalElement);
+    const myModalElement = document.getElementById('articleModal'); //finds modal with id
+    const myModal = new bootstrap.Modal(myModalElement); //creates new modal using bootstrap
 
     myModalElement.addEventListener('hidden.bs.modal', () => {
         // Reset the modal content to avoid any residual content after closing
@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		popularArticleContainer.appendChild(card);
 	};
 
-    const applySort = (sortOption) => {
+    const applySort = (sortOption) => {//sort option can be views or date
         let sortedArticles;
         if (sortOption === "date") {
             sortedArticles = [...articlesData.articles].sort((a, b) => new Date(b.date) - new Date(a.date));
