@@ -245,36 +245,48 @@ footer {
 	border: none;
 }
 .popular-card .card {
-
+    width: 100%; /* Обеспечивает гибкость на малых экранах */
+    max-width: 600px; /* Ограничивает ширину на больших экранах */
     height: 420px; 
-	max-width: 600px; 
-	min-width: 370px; 
+	min-width: 370px;
     transition: transform 0.3s ease-in-out;
+    margin: auto;
 }
+
 .popular-card .card-img-top {
-	width: 100%;          
-    height: 250px;        
-    object-fit: cover; 
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
+
 .popular-card .card-body {
     overflow: hidden;
 }
 
 .popular-card .card-header {
-    font-size: 1.2rem; /* Уменьшение размера шрифта */
-    text-overflow: ellipsis; /* Обрезка текста с многоточием */
-    white-space: nowrap; /* Без переноса текста */
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     overflow: hidden;
 }
 
 .popular-card .list-group-item {
-    font-size: 0.9rem; /* Уменьшение размера шрифта */
+    font-size: 0.9rem;
+}
+
+/* Для экранов среднего размера */
+@media (max-width: 992px) {
+    .popular-card .card {
+        max-width: 80%; /* Увеличение гибкости на экранах среднего размера */
+		min-width: none;
+    }
 }
 
 /* Специально для маленьких экранов */
 @media (max-width: 768px) {
     .popular-card .card {
-        max-width: 100%; /* Ограничение ширины для мелких экранов */
+        max-width: 100%; /* Полная ширина для мелких экранов */
+		min-width: none;
     }
 }
 .modal-content {
