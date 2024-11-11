@@ -256,6 +256,27 @@ footer {
     height: 250px;        
     object-fit: cover; 
 }
+.popular-card .card-body {
+    overflow: hidden;
+}
+
+.popular-card .card-header {
+    font-size: 1.2rem; /* Уменьшение размера шрифта */
+    text-overflow: ellipsis; /* Обрезка текста с многоточием */
+    white-space: nowrap; /* Без переноса текста */
+    overflow: hidden;
+}
+
+.popular-card .list-group-item {
+    font-size: 0.9rem; /* Уменьшение размера шрифта */
+}
+
+/* Специально для маленьких экранов */
+@media (max-width: 768px) {
+    .popular-card .card {
+        max-width: 100%; /* Ограничение ширины для мелких экранов */
+    }
+}
 .modal-content {
     background-color: var(--card-background-color);
     color: var(--text-color);
