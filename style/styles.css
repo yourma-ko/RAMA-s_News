@@ -315,12 +315,14 @@ footer {
         min-width: auto;
         max-width: 100%; 
         width: 100%; 
+
     }
 .news__title {
 	flex-direction: column; 
 	align-items: center; 
 	text-align: center; 
 	padding: 20px; 
+	margin-top: 60px;
 }
 
 .news__title-image {
