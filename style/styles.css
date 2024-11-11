@@ -248,7 +248,7 @@ footer {
 
     height: 420px; 
 	max-width: 600px; 
-	min-width: 400px; 
+	min-width: 370px; 
     transition: transform 0.3s ease-in-out;
 }
 .popular-card .card-img-top {
